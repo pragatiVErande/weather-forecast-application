@@ -1,1 +1,1 @@
-# whether-forecast-application
+# weather-forecast-application
