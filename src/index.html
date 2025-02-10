@@ -43,15 +43,15 @@ min-h-screen flex flex-col gap-5 items-center p-10">
 
         <div id="left" class="flex flex-col">
             <div id="top" class="mb-6">
-                <p id="temperature-main" class="font-bold text-5xl">24°C</p>
+                <p id="temperature-main" class="font-bold text-5xl">_°C</p>
                 <p class="font-semibold">Now</p>
             </div>
-           <p class="font-semibold text-xl"><span id="city">Mumbai</span>
-            <span id="country">India</span></p> 
-            <p class="font-semibold text-xl">01 Jan, 2025</p> 
+           <p class="font-semibold text-xl"><span id="town">Region</span>,
+            <span id="country">Country</span></p> 
+            <p id="day" class="font-semibold text-xl">Date</p> 
         </div>
         <div id="right" class="flex justify-center items-center">
-            <img src="/images/sun.png" alt="sun" class="h-28 w-28">
+            <img id="main-icon" src="/images/sun.png" alt="sun" class="h-28 w-28">
         </div>
     </section>
 
@@ -62,9 +62,9 @@ min-h-screen flex flex-col gap-5 items-center p-10">
         <div id="leftDiv" class="flex flex-col justify-start">
             <img id="icon" src="/images/sun.png" alt="weather" class="w-28 h-28">
             <!--weather-->
-            <p id="weather" class="font-bold text-4xl text-white">Sunny</p>
+            <p id="weather" class="font-bold text-4xl text-white">Weather</p>
             <!--description-->
-            <p id="weather-description" class="font-semibold text-white">Clear sky</p>
+            <p id="weather-description" class="font-semibold text-white">Weather discription</p>
         </div>
         <!--Right side-->
         <div id="rightDiv" class="w-1/2 flex flex-col space-y-2">
@@ -74,7 +74,7 @@ min-h-screen flex flex-col gap-5 items-center p-10">
                 <ion-icon class="h-8 w-8 text-white" name="thermometer"></ion-icon>
                 <div class="">
                     <p id="temperature" class="font-bold text-2xl text-right
-                    text-[#ff5a00]">24°C</p>
+                    text-[#ff5a00]">_°C</p>
                     <p class="text-sm text-white text-right" >Temperature</p>
                 </div>
             </div>
@@ -84,7 +84,7 @@ min-h-screen flex flex-col gap-5 items-center p-10">
                 <ion-icon name="speedometer" class="h-8 w-8 text-white"></ion-icon>
                 <div class="">
                     <p id="wind-speed" class="font-bold text-2xl text-right
-                    text-[#ff5a00]">1.18 m/s</p>
+                    text-[#ff5a00]">_ m/s</p>
                     <p class="text-sm text-white text-right">Wind speed</p>
                 </div>
             </div>
@@ -94,7 +94,7 @@ min-h-screen flex flex-col gap-5 items-center p-10">
                 <ion-icon name="rainy" class="h-8 w-8 text-white"></ion-icon>
                 <div class="">
                     <p id="humidity" class="font-bold text-2xl text-right
-                    text-[#ff5a00]">89 %</p>
+                    text-[#ff5a00]">_ %</p>
                     <p class="text-sm text-white text-right">Humidity</p>
                 </div>
             </div>
@@ -110,31 +110,31 @@ min-h-screen flex flex-col gap-5 items-center p-10">
              bg-white/20 rounded-2xl backdrop-blur-sm shadow-2xl">
                 <p class="font-semibold text-lg text-white">Date</p>
                 <img class="h-20 w-20" src="/images/sun-cloud.png" alt="weather">
-                <p class="font-bold text-lg text-white">24°C</p>
+                <p class="font-bold text-lg text-white">_°C</p>
             </div>
             <div class="flex flex-col items-center justify-center p-5 m-2 
             bg-white/20 rounded-2xl backdrop-blur-sm shadow-2xl">
                 <p class="font-semibold text-lg text-white">Date</p>
                 <img class="h-20 w-20" src="/images/sun-cloud.png" alt="weather">
-                <p class="font-bold text-lg text-white">24°C</p>
+                <p class="font-bold text-lg text-white">_°C</p>
             </div>
             <div class="flex flex-col items-center justify-center p-5 m-2 
             bg-white/20 rounded-2xl backdrop-blur-sm shadow-2xl">
                 <p class="font-semibold text-lg text-white">Date</p>
                 <img class="h-20 w-20" src="/images/sun-cloud.png" alt="weather">
-                <p class="font-bold text-lg text-white">24°C</p>
+                <p class="font-bold text-lg text-white">_°C</p>
             </div>
             <div class="flex flex-col items-center justify-center p-5 m-2 
             bg-white/20 rounded-2xl backdrop-blur-sm shadow-2xl">
                 <p class="font-semibold text-lg text-white">Date</p>
                 <img class="h-20 w-20" src="/images/sun-cloud.png" alt="weather">
-                <p class="font-bold text-lg text-white">24°C</p>
+                <p class="font-bold text-lg text-white">_°C</p>
             </div>
             <div class="flex flex-col items-center justify-center p-5 m-2 
             bg-white/20 rounded-2xl backdrop-blur-sm shadow-2xl">
                 <p class="font-semibold text-lg text-white">Date</p>
                 <img class="h-20 w-20" src="/images/sun-cloud.png" alt="weather">
-                <p class="font-bold text-lg text-white">24°C</p>
+                <p class="font-bold text-lg text-white">_°C</p>
             </div>
         </div>
     </section>
