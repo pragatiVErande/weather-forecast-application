@@ -1561,6 +1561,9 @@
   .bg-\[url\(\'\/images\/bg-image\.jpg\'\)\] {
     background-image: url('/images/bg-image.jpg');
   }
+  .bg-\[url\(\'images\/bg-image\.jpg\'\)\] {
+    background-image: url('images/bg-image.jpg');
+  }
   .bg-none {
     background-image: none;
   }
