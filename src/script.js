@@ -14,7 +14,7 @@ const main_icon_element = document.getElementById("main-icon");
 const five_days_forecast_element = document.getElementById("day-forecast");
 const location_button_element = document.getElementById("locationBtn");
 
-
+let selectedCity = '';  // Variable to store the selected city
 const apiKey = '0134ad125393361dbffedc2740a51d76';
 
 function getWeatherDetails(name, lat,lon, country, state){
@@ -94,6 +94,8 @@ function getWeatherDetails(name, lat,lon, country, state){
     }).catch(() => {
         alert(`failed to catch current weather`);
     });
+
+    hideDropdown();
 }
 
 function getCityCoordinates(){
@@ -132,11 +134,67 @@ function getUserLocationCoordinates(){
             alert(`geolocation permission denied. Please allow the location permission and try again`);
         }
     })
+};
+
+// Function to save recently searched cities to localStorage 
+function saveRecentCity(city) {
+    let recentCities = JSON.parse(localStorage.getItem('recentCities')) || [];
+    if (!recentCities.includes(city)) {
+        recentCities.push(city);
+        localStorage.setItem('recentCities', JSON.stringify(recentCities));
+    }
 }
 
-search_button_element.addEventListener('click', getCityCoordinates);
+// Function to load recently searched cities into dropdown
+function loadRecentCities() {
+    let recentCities = JSON.parse(localStorage.getItem('recentCities')) || [];
+    cityList.innerHTML = ''; // Clear previous list
+
+    recentCities.forEach(city => {
+        const li = document.createElement('li');
+        li.textContent = city;
+        li.classList.add('p-2', 'cursor-pointer', 'hover:bg-gray-100');
+        li.addEventListener('click', () => {
+            city_input_element.value = city; // Insert selected city in the input field
+            selectedCity = city;   // Store the selected city
+            hideDropdown();        // Hide the dropdown after selection
+        });
+        cityList.appendChild(li);
+    });
+
+    if (recentCities.length > 0) {
+        cityDropdown.classList.remove('hidden');
+    } else {
+        cityDropdown.classList.add('hidden');
+    }
+}
+
+// Function to hide the dropdown
+function hideDropdown() {
+    cityDropdown.classList.add('hidden');
+}
+
+
+// Event listener for input to search cities
+/*city_input_element.addEventListener('focus', () => {
+    
+        loadRecentCities(); // Load recently searched cities
+});*/
+
+search_button_element.addEventListener('click', () => {
+        const city = city_input_element.value.trim();
+        if (city) {
+            saveRecentCity(city);  // Save city to recent list
+            getCityCoordinates();      // Fetch location coordinates for the city
+        } else {
+            alert("Please enter a city name to search or Use current location");
+        }
+    });
 
 location_button_element.addEventListener('click',getUserLocationCoordinates);
+
+ // Load recent cities on page load
+ //loadRecentCities();
 
 //window.addEventListener('load',getUserLocationCoordinates);
 

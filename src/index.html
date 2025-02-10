@@ -22,10 +22,17 @@ min-h-screen flex flex-col gap-5 items-center p-10">
         <input id="city" type="text" placeholder="Enter a city name" class="bg-white py-2 px-3 w-full rounded-full
         text-gray-700 text-lg outline-2 outline-white/70 backdrop-blur-lg
         ease-in-out duration-500 focus:bg-white/20 focus:text-white"/>
+        
         <button type="submit" id="searchBtn">
             <ion-icon name="search" class="text-white text-2xl p-3 bg-white/50 
             rounded-full"></ion-icon>
         </button>
+    </div>
+     <!-- Dropdown for Recent Cities -->
+     <div id="cityDropdown" class="mt-2 w-full bg-white border border-gray-300 rounded shadow-lg max-h-60 overflow-y-auto hidden z-10">
+        <ul id="cityList" class="p-2">
+            <!-- Recently searched cities will be dynamically inserted here -->
+        </ul>
     </div>
 
     <p class="text-white">or</p>
@@ -46,7 +53,7 @@ min-h-screen flex flex-col gap-5 items-center p-10">
                 <p id="temperature-main" class="font-bold text-5xl">_°C</p>
                 <p class="font-semibold">Now</p>
             </div>
-           <p class="font-semibold text-xl"><span id="town">Region</span>,
+           <p class="font-semibold text-xl"><span id="town">City</span>,
             <span id="country">Country</span></p> 
             <p id="day" class="font-semibold text-xl">Date</p> 
         </div>
