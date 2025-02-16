@@ -15,7 +15,7 @@ const five_days_forecast_element = document.getElementById("day-forecast");
 const location_button_element = document.getElementById("locationBtn");
 
 let selectedCity = '';  // Variable to store the selected city
-const apiKey = '0134ad125393361dbffedc2740a51d76';
+const apiKey = '';
 
 function getWeatherDetails(name, lat,lon, country, state){
     let FORCAST_API_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`,
